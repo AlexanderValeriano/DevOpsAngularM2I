@@ -4,6 +4,6 @@ jobs:
   jobs1:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v3
-      name: hello world
+    - uses: actions/checkout@v3
+    - name: hello world
       run: echo hello world Alexander
