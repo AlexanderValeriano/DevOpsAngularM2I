@@ -5,12 +5,15 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    env: 
-      variable: "Je suis une variable accesible dans ce job et ses steps"
+    env:
+      variable2: "Je suis une variable accesible dans ce job et ses steps"
     steps:
-      step1:
-        env: 
-          variable: "Je suis une variable accesible dans ce step"
-    - uses: actions/checkout@v3
-    - name: hello world
-      run: echo hello world Alexander
+      - uses: actions/checkout@v3
+      - name: hello world
+        run: echo $variable
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: hello world
+        run: echo $variable2
