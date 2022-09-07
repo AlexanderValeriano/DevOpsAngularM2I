@@ -1,9 +1,15 @@
 name: HelloWorld
 on: [push]
+env:
+  variable: "Je suis une variable accesible dans tout le workflow"
 jobs:
   jobs1:
     runs-on: ubuntu-latest
+    env: variable: "Je suis une variable accesible dans ce job et ses steps"
     steps:
+      steps1:
+        env: 
+          variable: "Je suis une variable accesible dans ce step"
     - uses: actions/checkout@v3
     - name: hello world
       run: echo hello world Alexander
