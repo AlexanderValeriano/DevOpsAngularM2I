@@ -1,0 +1,11 @@
+name: issueOpen
+on:
+  pull_request:
+    types: [closed]
+jobs:
+  mergePR:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: push
+        run: echo 'La PR est fermée'
