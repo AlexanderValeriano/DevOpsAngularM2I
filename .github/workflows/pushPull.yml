@@ -1,0 +1,19 @@
+name: PushPull
+on: [push]
+env:
+  variable: "Je suis une variable accesible dans tout le workflow"
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      variable2: "Je suis une variable accesible dans ce job et ses steps"
+    steps:
+      - uses: actions/checkout@v3
+      - name: push
+        run: echo "C'est un push !"
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: pull
+        run: echo "C'est une pull request !"
