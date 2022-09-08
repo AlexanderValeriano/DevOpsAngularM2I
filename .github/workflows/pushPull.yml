@@ -6,7 +6,7 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    
+    if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v3
       - name: push
