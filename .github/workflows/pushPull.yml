@@ -1,5 +1,5 @@
 name: PushPull
-on: [push, pull]
+on: [push, pull_request]
 env:
   variable: "C'est un push fait par Alexander !"
   variable2: "C'est une pull request !"
