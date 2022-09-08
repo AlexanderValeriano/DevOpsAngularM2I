@@ -1,0 +1,14 @@
+name: issueOpen
+on: 
+  issues:
+    types: [opened]
+env:
+  variable: 'issue créée'
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    #if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v3
+      - name: push
+        run: echo $variable
