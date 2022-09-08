@@ -1,8 +1,8 @@
 name: PushPull
-on: [push]
+on: [push,pull]
 env:
   variable: "C'est un push fait par Alexander !"
-  #variable2: "C'est une pull request !"
+  variable2: "C'est une pull request !"
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -11,27 +11,10 @@ jobs:
       - uses: actions/checkout@v3
       - name: push
         run: echo $variable
-  #job2:
-    #runs-on: ubuntu-latest
-    #steps:
-      #- uses: actions/checkout@v3
-      #- name: pull
-        #run: echo $variable2
-on: [pull]
-env:
-  #variable: "C'est un push fait par Alexander !"
-  variable2: "C'est une pull request fait par Fanilo!"
-jobs:
-  #job1:
-    #runs-on: ubuntu-latest
-    
-    #steps:
-      #- uses: actions/checkout@v3
-      #- name: push
-       # run: echo $variable
   job2:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: pull
         run: echo $variable2
+
