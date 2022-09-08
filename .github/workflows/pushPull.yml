@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: push
-        run: echo "C'est un push !"
+        run: echo "C'est un push fait par Alexander !"
   job2:
     runs-on: ubuntu-latest
     steps:
